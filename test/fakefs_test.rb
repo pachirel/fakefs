@@ -974,6 +974,8 @@ class FakeFSTest < Test::Unit::TestCase
 
     assert_equal ['/path/bar', '/path/foo'], Dir['/path/{foo,bar}']
 
+    assert_equal ['/path/bar'], Dir['/path/{b{ar},}']
+
     assert_equal ['/path/bar', '/path/bar2'], Dir['/path/bar{2,}']
 
     Dir.chdir '/path' do

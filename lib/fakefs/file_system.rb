@@ -131,6 +131,7 @@ module FakeFS
           directories_under(dir)
         end
       else
+        # FIXME Maybe causes here
         dir.matches /\A#{pattern.gsub('.', '\.').gsub('?','.').gsub('*', '.*').gsub(/\{(.*?)\}/) { "(#{$1.gsub(',', '|')})" }}\Z/
       end
 
